@@ -1,0 +1,18 @@
+Le schéma actuel contient plusieurs redondances et anomalies. Voici quelques exemples : 
+
+Redondances : 
+
+dans la table COMMANDES_CLIENTS, les informations du client (nom, email, téléphone, adresse) sont répétées pour chaque commande. 
+De même, dans PRODUITS_VENDEURS, les informations du vendeur (nom, email, IBAN) sont répétées pour chaque produit.
+
+Anomalie de mise à jour : 
+
+si un vendeur change d’email, il faut modifier toutes les lignes correspondantes dans la table PRODUITS_VENDEURS.
+
+Anomalie d’insertion : 
+
+il est difficile d’ajouter un vendeur dans la base de données sans créer au moins un produit associé.
+
+Anomalie de suppression : 
+
+si on supprime la dernière commande d’un client dans COMMANDES_CLIENTS, on perd également toutes les informations concernant ce client.
