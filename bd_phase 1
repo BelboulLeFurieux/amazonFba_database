@@ -57,3 +57,8 @@ INSERT INTO COMMANDES_CLIENTS VALUES
 (102, '2026-03-02', 'En attente', 2, 'MESSAOUDI Hamza', 'hamza.messaoudi@univ-tours.fr', '0611223344', '60 Rue du Plat d Étain', 'Tours', '37000', 'France', 'PayPal', 45.50);
 INSERT INTO COMMANDES_CLIENTS VALUES 
 (103, '2026-03-05', 'Expédiée', 1, 'TALBI Ismail', 'ismail.talbi@univ-tours.fr', '0601020304', '3 Rue des Tanneurs', 'Tours', '37000', 'France', 'Carte Bancaire', 150.00);
+
+INSERT INTO LOGISTIQUE_ET_SAV (id_commande, sku, quantite, nom_produit_copie, transporteur, num_suivi, date_expedition, id_retour, motif_retour, remboursement, note_avis, commentaire_avis) VALUES 
+(101, 'SKU-001', 1, 'macBook Air M3', 'Chronopost', 'CHR-TALBI-001', '2026-03-02', NULL, NULL, 0.00, 5, ' parfait pour informatique '),
+(102, 'SKU-003', 1, 'ecran 4K Dell', 'Colissimo', 'COL-MESSA-002', NULL, NULL, NULL, 0.00, NULL, NULL),
+(103, 'SKU-002', 1, 'souris gaming', 'Chronopost', 'CHR-TALBI-002', '2026-03-05', NULL, NULL, 0.00, 4, 'bonne qualiter , pas cher et ergonomique.');
