@@ -1,5 +1,4 @@
-Exemple Base de donnée avec pblm de redondances, de logique..
-
+-- 1. Création des tables
 CREATE TABLE COMMANDES_CLIENTS (
     id_commande INT PRIMARY KEY,
     date_commande DATE,
@@ -49,22 +48,19 @@ CREATE TABLE LOGISTIQUE_ET_SAV (
     FOREIGN KEY (sku) REFERENCES PRODUITS_VENDEURS(sku)
 );
 
+-- 2. Insertion des données (L'ordre est important !)
 
-
 INSERT INTO COMMANDES_CLIENTS VALUES 
-(101, '2026-03-01', 'Livrée', 1, 'TALBI Ismail', 'ismail.talbi@univ-tours.fr', '0601020304', '3 Rue des Tanneurs', 'Tours', '37000', 'France', 'Carte Bancaire', 1200.00);
-INSERT INTO COMMANDES_CLIENTS VALUES 
-(102, '2026-03-02', 'En attente', 2, 'MESSAOUDI Hamza', 'hamza.messaoudi@univ-tours.fr', '0611223344', '60 Rue du Plat d Étain', 'Tours', '37000', 'France', 'PayPal', 45.50);
-INSERT INTO COMMANDES_CLIENTS VALUES 
+(101, '2026-03-01', 'Livrée', 1, 'TALBI Ismail', 'ismail.talbi@univ-tours.fr', '0601020304', '3 Rue des Tanneurs', 'Tours', '37000', 'France', 'Carte Bancaire', 1200.00),
+(102, '2026-03-02', 'En attente', 2, 'MESSAOUDI Hamza', 'hamza.messaoudi@univ-tours.fr', '0611223344', '60 Rue du Plat d Étain', 'Tours', '37000', 'France', 'PayPal', 45.50),
 (103, '2026-03-05', 'Expédiée', 1, 'TALBI Ismail', 'ismail.talbi@univ-tours.fr', '0601020304', '3 Rue des Tanneurs', 'Tours', '37000', 'France', 'Carte Bancaire', 150.00);
-
-INSERT INTO LOGISTIQUE_ET_SAV (id_commande, sku, quantite, nom_produit_copie, transporteur, num_suivi, date_expedition, id_retour, motif_retour, remboursement, note_avis, commentaire_avis) VALUES 
-(101, 'SKU-001', 1, 'macBook Air M3', 'Chronopost', 'CHR-TALBI-001', '2026-03-02', NULL, NULL, 0.00, 5, ' parfait pour informatique '),
-(102, 'SKU-003', 1, 'ecran 4K Dell', 'Colissimo', 'COL-MESSA-002', NULL, NULL, NULL, 0.00, NULL, NULL),
-(103, 'SKU-002', 1, 'souris gaming', 'Chronopost', 'CHR-TALBI-002', '2026-03-05', NULL, NULL, 0.00, 4, 'bonne qualiter , pas cher et ergonomique.');
-
 
 INSERT INTO PRODUITS_VENDEURS VALUES 
 ('SKU-001', 'MacBook Air M3', 'Apple', 'Informatique', 1200.00, 20.0, 50, 'HACHE Joany', 'joany.hache@vendeur.fr', 'FR7630001000000123456789012', 'Entrepôt Tours Nord', 15),
 ('SKU-002', 'Souris Magic Mouse', 'Apple', 'Accessoire', 85.00, 20.0, 50, 'HACHE Joany', 'joany.hache@vendeur.fr', 'FR7630001000000123456789012', 'Entrepôt Tours Nord', 100),
 ('SKU-003', 'Écran 4K Dell', 'Dell', 'Informatique', 450.00, 20.0, 60, 'BENNEJMA Bilel', 'bilel.bennejma@vendeur.fr', 'FR7698765432109876543210987', 'Entrepôt Orléans', 25);
+
+INSERT INTO LOGISTIQUE_ET_SAV (id_commande, sku, quantite, nom_produit_copie, transporteur, num_suivi, date_expedition, id_retour, motif_retour, remboursement, note_avis, commentaire_avis) VALUES 
+(101, 'SKU-001', 1, 'macBook Air M3', 'Chronopost', 'CHR-TALBI-001', '2026-03-02', NULL, NULL, 0.00, 5, ' parfait pour informatique '),
+(102, 'SKU-003', 1, 'ecran 4K Dell', 'Colissimo', 'COL-MESSA-002', NULL, NULL, NULL, 0.00, NULL, NULL),
+(103, 'SKU-002', 1, 'souris gaming', 'Chronopost', 'CHR-TALBI-002', '2026-03-05', NULL, NULL, 0.00, 4, 'bonne qualiter , pas cher et ergonomique.');
